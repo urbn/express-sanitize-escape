@@ -1,26 +1,29 @@
 {
-  "name": "express-sanitized",
-  "description": "Express middleware for the sanitizer module using Caja's HTML Sanitizer.",
-  "version": "0.5.1",
-  "author": "Patrick Hogan <patrick@callinize.com>",
-  "homepage": "https://github.com/askhogan/express-sanitized",
+  "name": "express-sanitize-escape",
+  "description": "Express middleware for the sanitizer module using Caja's HTML Sanitizer and HTML escape using htmlencode.",
+  "version": "0.6.0",
+  "author": "Justin Hamade <justin@fingerfoodstudios.com>",
+  "homepage": "https://github.com/fingerfoodstudios/express-sanitize-esacpe",
   "bugs": {
-    "email": "patrick@callinize.com",
-    "url": "https://github.com/askhogan/express-sanitized/issues"
+    "email": "justin@fingerfoodstudios.com",
+    "url": "https://github.com/fingerfoodstudios/express-sanitize-escape/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/askhogan/express-sanitized.git"
+    "url": "git://github.com/fingerfoodstudios/express-sanitize-escape.git"
   },
   "license": "MIT",
   "main": "./index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha"
+  },
   "engines": {
     "node": "*"
   },
   "dependencies": {
+    "htmlencode": "0.0.4",
     "sanitizer": "0.1.3",
-    "underscore": "1.8.3"
+    "lodash": "4.6.1"
   },
   "keywords": [
     "express",
@@ -29,11 +32,10 @@
     "xss"
   ],
   "devDependencies": {
-    "body-parser": "^1.7.0",
+    "body-parser": "^1.15.0",
     "connect": "^3.1.1",
-    "express": "^4.8.7",
-    "mocha": "^2.2.5",
-    "optimist": "^0.6.1",
-    "supertest": "^1.1.0"
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0"
   }
 }
