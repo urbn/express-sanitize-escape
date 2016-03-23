@@ -55,6 +55,10 @@ This module was inspired by [express-sanitizer](https://www.npmjs.org/package/ex
 
 ## Changelog
 
+### v0.6.1
+- Added additional test for nested object and an array 
+- Added chai js for testing
+
 ### v0.6.0
 - Added htmlencoding
 - Change filer to recurse through all values of the object and sanitize only values that are strings
