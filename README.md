@@ -5,7 +5,7 @@
 ## Installation
 
 ```
-npm install express-sanitize-middleware
+npm install express-sanitize-escape
 ```
 
 ## Usage
@@ -27,13 +27,13 @@ app.use(expressSanitized()); // this line follows app.use(bodyParser.json) or th
 
 ## Output
 
-The string 
+The string
 ```javascript
 '<script>document.write('cookie monster')</script> download now'
 ```
 will be sanitized to ' download now'.
 
-and 
+and
 ```javascript
 '< > ' " &'
 ```
@@ -41,12 +41,12 @@ will be escaped to `&lt; &gt; &#39; &quot; &amp;`
 
 ## Limitations
 
-This is a basic implementation of [Caja-HTML-Sanitizer](https://github.com/theSmaw/Caja-HTML-Sanitizer) with the specific purpose of mitigating against persistent XSS risks. 
+This is a basic implementation of [Caja-HTML-Sanitizer](https://github.com/theSmaw/Caja-HTML-Sanitizer) with the specific purpose of mitigating against persistent XSS risks.
 And [node-htmlencode](https://github.com/danmactough/node-htmlencode) to escape all html entities
 
 ## Caveats
 
-This module trusts the dependencies to provide basic persistent XSS risk mitigation. A user of this package should review all packages and make their own decision on security and fitness for purpose. 
+This module trusts the dependencies to provide basic persistent XSS risk mitigation. A user of this package should review all packages and make their own decision on security and fitness for purpose.
 
 This module was inspired by [express-sanitizer](https://www.npmjs.org/package/express-sanitizer) and [express-sanitized](https://www.npmjs.org/package/express-sanitized).
   The difference here is:
@@ -56,7 +56,7 @@ This module was inspired by [express-sanitizer](https://www.npmjs.org/package/ex
 ## Changelog
 
 ### v0.6.1
-- Added additional test for nested object and an array 
+- Added additional test for nested object and an array
 - Added chai js for testing
 
 ### v0.6.0
