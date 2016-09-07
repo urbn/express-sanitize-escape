@@ -24,6 +24,29 @@ app.use(expressSanitized()); // this line follows app.use(bodyParser.json) or th
 
 ```
 
+The above sanitizes `req.body` and `req.query`.  In order to sanitize `req.params` as well, pass in an express router or app to `expressSanitized.sanitizeParams`,
+along with the names of the params to sanitize, e.g.:
+
+```javascript
+var express = require('express');
+var expressSanitized = require('express-sanitize-escape');
+
+var router = express.router();
+expressSanitized.sanitizeParams(router, ['id','name']);
+
+router.get('/:id', function(req, res, next)
+{
+    // req.params.id is now sanitized.
+    ...
+});
+
+router.get('/:name', function(req, res, next)
+{
+    // req.params.name is now sanitized.
+    ...
+});
+```
+
 
 ## Output
 
@@ -34,8 +57,8 @@ The string
 will be sanitized to ' download now'.
 
 and
-```javascript
-'< > ' " &'
+```
+< > ' " &
 ```
 will be escaped to `&lt; &gt; &#39; &quot; &amp;`
 
@@ -54,6 +77,9 @@ This module was inspired by [express-sanitizer](https://www.npmjs.org/package/ex
   And automatically html escapes all strings.
 
 ## Changelog
+
+### v0.6.3
+- Added function to sanitize request params of a router
 
 ### v0.6.1
 - Added additional test for nested object and an array
