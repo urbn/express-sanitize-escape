@@ -13,7 +13,7 @@ var expressSanitized = require('./../lib/express-sanitize-escape');
 var app = express();
 
 app.use(bodyParser.json());
-app.use(expressSanitized()); // this line follows express.bodyParser()
+app.use(expressSanitized.middleware()); // this line follows express.bodyParser()
 
 app.post('/test', function(req, res){
     res.status(200).json(req.body);
@@ -41,13 +41,14 @@ describe('POST /test', function(){
     it('respond with html entities escaped', function(done) {
         request(app)
             .post('/test')
-            .send({hasHtmlEntities: '< > \' " &'})
+            .send({hasHtmlEntities: '< > \' " & ä 汉语'})
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
                 if (err) return done(err);
                 try {
-                    res.body.should.have.property('hasHtmlEntities', '&lt; &gt; &#39; &quot; &amp;');
+                    res.body.should.have.property('hasHtmlEntities', '&lt; &gt; &#39; &quot; &amp; &auml; &#27721;&#35821;');
+                    expressSanitized.htmlDecodeBody(res.body).should.have.property('hasHtmlEntities', '< > \' " & ä 汉语');
                     done();
                 } catch (err) {
                     done(err);

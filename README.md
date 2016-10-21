@@ -78,6 +78,13 @@ This module was inspired by [express-sanitizer](https://www.npmjs.org/package/ex
 
 ## Changelog
 
+### v1.0.0
+- This is a breaking change.
+- Change to use exports instead of module exports
+- Middleware is now `exports.middleware so app.use(expressSanitized())` is now `app.use(expressSanitized.middleware())`
+- Added a function to decode the body `expressSanitized.htmlDecodeBody()`
+- Added tests for unicode characters
+
 ### v0.6.3
 - Added function to sanitize request params of a router
 
