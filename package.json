@@ -1,7 +1,7 @@
 {
   "name": "express-sanitize-escape",
   "description": "Express middleware for the sanitizer module using Caja's HTML Sanitizer and HTML escape using htmlencode.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Justin Hamade <justin@fingerfoodstudios.com>",
   "homepage": "https://github.com/fingerfoodstudios/express-sanitize-esacpe",
   "bugs": {
