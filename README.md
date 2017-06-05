@@ -20,7 +20,7 @@ var expressSanitized = require('express-sanitize-escape');
 
 app.use(bodyParser.urlencoded);
 app.use(bodyParser.json);
-app.use(expressSanitized()); // this line follows app.use(bodyParser.json) or the last body parser middleware
+app.use(expressSanitized.middleware()); // this line follows app.use(bodyParser.json) or the last body parser middleware
 
 ```
 
