@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "htmlencode": "0.0.4",
-    "sanitizer": "0.1.3",
-    "lodash": "4.6.1"
+    "lodash": "4.17.20",
+    "sanitizer": "0.1.3"
   },
   "keywords": [
     "express",
