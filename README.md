@@ -1,7 +1,5 @@
 # express-sanitized
 
-[![Build Status](https://travis-ci.org/fingerfoodstudios/express-sanitize-escape.svg?branch=master)](https://travis-ci.org/fingerfoodstudios/express-sanitize-escape)
-
 ## Installation
 
 ```
