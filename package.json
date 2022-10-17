@@ -1,42 +1,41 @@
 {
   "name": "express-sanitize-escape",
   "description": "Express middleware for the sanitizer module using Caja's HTML Sanitizer and HTML escape using htmlencode.",
-  "version": "1.2.1",
-  "author": "Justin Hamade <justin@fingerfoodstudios.com>",
-  "homepage": "https://github.com/fingerfoodstudios/express-sanitize-esacpe",
+  "version": "1.3.0",
+  "author": "URBN",
   "bugs": {
-    "email": "justin@fingerfoodstudios.com",
-    "url": "https://github.com/fingerfoodstudios/express-sanitize-escape/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/fingerfoodstudios/express-sanitize-escape.git"
-  },
-  "license": "MIT",
-  "main": "./index.js",
-  "scripts": {
-    "test": "node node_modules/mocha/bin/mocha"
-  },
-  "engines": {
-    "node": "*"
+    "url": "https://github.com/urbn/express-sanitize-escape/issues"
   },
   "dependencies": {
     "htmlencode": "0.0.4",
     "lodash": "4.17.21",
     "sanitizer": "0.1.3"
   },
+  "devDependencies": {
+    "body-parser": "^1.20.1",
+    "chai": "^3.5.0",
+    "connect": "^3.7.0",
+    "express": "^4.18.2",
+    "mocha": "^2.5.3",
+    "supertest": "^1.2.0"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "homepage": "https://github.com/urbn/express-sanitize-esacpe",
   "keywords": [
     "express",
-    "sanitize",
     "sanitization",
+    "sanitize",
     "xss"
   ],
-  "devDependencies": {
-    "body-parser": "^1.15.0",
-    "chai": "^3.5.0",
-    "connect": "^3.1.1",
-    "express": "^4.13.4",
-    "mocha": "^2.4.5",
-    "supertest": "^1.2.0"
+  "license": "MIT",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/urbn/express-sanitize-escape.git"
+  },
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha"
   }
 }
